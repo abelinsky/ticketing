@@ -6,13 +6,7 @@ on:
       - master
     paths:
       - 'auth/**
-        
-# on:
-#   push:
-#     branches: 
-#       - master
-#     paths:
-#       - 'auth/**'
+      
 
 # jobs:
 #   build:
