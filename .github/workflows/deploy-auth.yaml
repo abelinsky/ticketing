@@ -1,5 +1,12 @@
 name: deploy-auth
 
+on:
+  push:
+    branches: 
+      - master
+    paths:
+      - 'auth/**
+        
 # on:
 #   push:
 #     branches: 
@@ -16,5 +23,11 @@ name: deploy-auth
 #       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 #         env:
 #           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-#           DCOKER_PASSWORD: $ {{ secrets.DOCKER_PASSWORD }}
+#           DOCKER_PASSWORD: $ {{ secrets.DOCKER_PASSWORD }}
 #       - run: docker push abelinsky/auth
+#       - uses: digitalocean/action-doctl@v2
+#         with:
+#           token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
+#       - run: doctl kubernetes cluster kubeconfig save ticketing
+#       - run: kubectl rollout restart deployment auth-depl
+            
